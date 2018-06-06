@@ -1,8 +1,42 @@
 jobs:
   build:
     docker:
-      - circleci/python:3.6.5-jessie
+      - image: circleci/python:3.6.5-jessie
     steps:
       - checkout
-      - run: pip install --no-cache-dir --requirement requirements.txt
+      - attach_workspace:
+          at: ~/application
+      - restore_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - run:
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install --no-cache-dir --requirement requirements.txt
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - venv
+      - persist_to_workspace:
+          paths:
+            - venv
+          root: .
+    working_directory: ~/application
+  test:
+    docker:
+      - image: circleci/python:3.6.5-jessie
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/application
+      - run: python setup.py test
+    working_directory: ~/application
+workflows:
+  life-cycle:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+  version: 2
 version: 2
