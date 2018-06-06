@@ -1,0 +1,7 @@
+services:
+  sut:
+    build: .
+    command: python setup.py test
+    ports:
+      - 8080:8080
+version: "3.6"
