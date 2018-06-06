@@ -1,0 +1,8 @@
+jobs:
+  build:
+    docker:
+      - circleci/python:3.6.5-jessie
+    steps:
+      - checkout
+      - run: pip install --no-cache-dir --requirement requirements.txt
+version: 2
