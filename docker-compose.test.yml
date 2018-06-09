@@ -3,5 +3,7 @@ services:
     build: .
     command: python setup.py test
     ports:
-      - 8080:8080
+      - 4567:4567
+    volumes:
+      - .:/srv
 version: "3.6"
