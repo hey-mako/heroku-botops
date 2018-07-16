@@ -4,4 +4,5 @@ COPY setup.py .
 COPY . .
 RUN pip install --no-cache-dir --requirement requirements.txt
 EXPOSE 8080
-CMD ["flask", "run"]
+ENTRYPOINT ["/srv/scripts/run_worker.sh"]
+CMD ["src"]
