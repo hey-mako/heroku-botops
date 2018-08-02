@@ -16,4 +16,6 @@ services:
       - .:/srv
   redis:
     image: redis:4-alpine
+  mongo:
+    image: mongo:4
 version: "3.6"
