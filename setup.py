@@ -8,11 +8,11 @@ setup(
     author='hey-mako',
     include_package_data=True,
     install_requires=[
+        'Flask==1.0.2',
         'ansible==2.6.2',
         'celery==4.2.1',
         'pymongo==3.7.1',
         'redis==2.10.6',
-        'Flask==1.0.2'
     ],
     license='MIT',
     name='botops',
