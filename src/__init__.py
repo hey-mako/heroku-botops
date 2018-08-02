@@ -56,6 +56,7 @@ def resources():
     data = request.get_json(force=True)
     collection = database.resources
     document = collection.find_one(filter={'uuid': data['uuid']})
+    # See https://goo.gl/3Y83zz
     if document is not None:
         task = provision.AsyncResult(document['task_id'])
         return jsonify({
