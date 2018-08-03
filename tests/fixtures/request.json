@@ -1,0 +1,18 @@
+{
+  "callback_url": "https://api.heroku.com/addons/01234567-89ab-cdef-0123-456789abcdef",
+  "log_drain_token": "d.01234567-89ab-cdef-0123-456789abcdef",
+  "log_input_url": "https://token:t.01234567-89ab-cdef-0123-456789abcdef@1.us.logplex.io/logs",
+  "name": "acme-inc-primary-database",
+  "oauth_grant": {
+    "code": "01234567-89ab-cdef-0123-456789abcdef",
+    "expires_at": "2016-03-03T18:01:31-0800",
+    "type": "authorization_code"
+  },
+  "options": {
+    "baz": "true",
+    "foo": "bar"
+  },
+  "plan": "basic",
+  "region": "amazon-web-services::us-east-1",
+  "uuid": "01234567-89ab-cdef-0123-456789abcdef"
+}

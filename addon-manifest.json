@@ -1,0 +1,22 @@
+{
+  "api": {
+    "config_vars": [
+      "MYADDON_URL"
+    ],
+    "password": "c51351a5a178c0d38791f0e34b7415cd",
+    "production": {
+      "base_url": "https://yourapp.com/heroku/resources",
+      "sso_url": "https://yourapp.com/sso/login"
+    },
+    "regions": [
+      "us"
+    ],
+    "requires": [],
+    "sso_salt": "2ad45541c6a79d68aaad17cac7eac73c",
+    "test": {
+      "base_url": "http://localhost:8080/heroku/resources",
+      "sso_url": "http://localhost:8080/sso/login"
+    }
+  },
+  "id": "myaddon"
+}
